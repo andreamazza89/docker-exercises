@@ -19,6 +19,9 @@ for each section (there are about 3 parts, each with around 6 sections), we will
 - read the section individually and work on the exercises
 - meet up (or discuss asyncronously) to discuss the section, compare notes and exercises
 
+Please find a living document of questions and comments ordered by exercise
+[here (requires 8L email to access)](https://docs.google.com/document/d/10DDMHfTIAL8Fg2dwJqfEplo0eNgaATDReGXt_qG9NaQ/edit#heading=h.anjzzih5xala)
+
 ## Time commitment
 
 There is a total of around 18 sections across 3 course parts; each section should take (though this is a guess)
@@ -35,6 +38,8 @@ We will nominate a person each week who will:
 - review the next section/exercises to work on
 - communicate the above to the rest of the group
 - setup/run the weekly meeting to discuss solutions to exercises/questions/ideas
+
+Please check the calendar to see the Whale of the Week.
 
 ## Learning goals (From the course itself)
 
