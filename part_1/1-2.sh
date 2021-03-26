@@ -5,5 +5,8 @@
 #
 # Clean the docker daemon from all images and containers.
 #
+docker container stop three
+docker container prune
+docker image rm nginx
 # Submit the output for docker ps -a and docker images
 
