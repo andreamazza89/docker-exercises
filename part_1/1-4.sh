@@ -28,3 +28,18 @@
 
 # > This exercise has multiple solutions, if the curl for helsinki.fi works then it’s done. Can you figure out other (smart) solutions?
 
+CONTAINER_NAME=exercise
+
+ # starts the container with a command that keeps it alive
+ docker run -d --name $CONTAINER_NAME ubuntu sh -c 'while true; do date; sleep 1; done'
+
+ # intalls curl
+ docker exec $CONTAINER_NAME sh -c 'apt-get update && apt-get install curl -y'
+
+ # draws the owl
+echo 'helsinki.fi' | docker exec -i $CONTAINER_NAME sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;' 
+
+# cleanup
+docker container kill $CONTAINER_NAME
+docker container rm $CONTAINER_NAME
+
