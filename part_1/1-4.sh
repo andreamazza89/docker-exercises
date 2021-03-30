@@ -28,3 +28,12 @@
 
 # > This exercise has multiple solutions, if the curl for helsinki.fi works then it’s done. Can you figure out other (smart) solutions?
 
+# hacky hacky sleepy hack
+CONTAINER=$(docker run --rm -d ubuntu sleep infinity)
+
+# the 'right' way of doing this is probably building a Dockerfile using ubuntu as a base image but I imagine we're getting ahead of ourself!
+docker exec $CONTAINER /bin/sh -c "apt-get update && apt-get install curl -y"
+
+echo "helsinki.fi" | docker exec -i $CONTAINER sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+docker container stop $CONTAINER
