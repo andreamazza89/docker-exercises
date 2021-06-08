@@ -1,0 +1,8 @@
+version: '3.9'
+
+services:
+  exercise-21:
+    image: devopsdockeruh/simple-web-service:alpine
+    command: server
+    ports:
+      - 8080:8080
