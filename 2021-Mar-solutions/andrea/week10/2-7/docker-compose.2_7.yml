@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    volumes:
+      - model:/src/model
+    ports:
+      - "5000:5000"
+
+  training:
+    build: ./training
+    volumes:
+      - model:/src/model
+
+volumes:
+  model:
