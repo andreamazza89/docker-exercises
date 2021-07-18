@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  frontend:
+    build: ../week6/1-12
+    ports:
+      - "5000:5000"
+
+  backend:
+    build: ../week6/1-13
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - REQUEST_ORIGIN=http://localhost:5000
+      - REDIS_HOST=cache
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=my-user
+      - POSTGRES_PASSWORD=my-password
+      - POSTGRES_DATABASE=my-db
+
+  cache:
+    image: redis:6-alpine
+
+  db:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=my-user
+      - POSTGRES_PASSWORD=my-password
+      - POSTGRES_DB=my-db
